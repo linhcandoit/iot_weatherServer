@@ -76,4 +76,24 @@ export class WeathersService {
         })
         return days;
     }
+
+    getWeatherHumidityGreaterThan(humidity : Number){
+        let days : WeatherData[] = [];
+        this.weatherDatas.forEach(data => {
+            if(data.humidity >= humidity) {
+                days.push(data)
+            }
+        })
+        return days;
+    }
+
+    getWeatherHumiditySmallerThan(humidity : Number){
+        let days : WeatherData[] = [];
+        this.weatherDatas.forEach(data => {
+            if(data.humidity <= humidity) {
+                days.push(data)
+            }
+        })
+        return days;
+    }
 }

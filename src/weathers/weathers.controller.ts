@@ -38,4 +38,18 @@ export class WeathersController {
         const dataReturn = this.weathersService.getWeatherTemperatureSmallerThan(temperature)
         return dataReturn;
     }
+
+    @Get("/humidityGreater/:humi")
+    async getWeaterDatasHumidityGreaterThan(@Param("humi") humi : String){
+        const humidity = Number(humi)
+        const dataReturn = this.weathersService.getWeatherHumidityGreaterThan(humidity)
+        return dataReturn;
+    }
+
+    @Get("/humiditySmaller/:humi")
+    async getWeaterDatasHumiditySmallerThan(@Param("humi") humi : String){
+        const humidity = Number(humi)
+        const dataReturn = this.weathersService.getWeatherHumiditySmallerThan(humidity)
+        return dataReturn;
+    }
 }
